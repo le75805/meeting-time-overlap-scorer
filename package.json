@@ -1,0 +1,17 @@
+{
+  "name": "meeting-time-overlap-scorer",
+  "version": "0.1.0",
+  "description": "Computes a similarity score between two recurring meeting time windows across timezones, accounting for DST shifts.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
