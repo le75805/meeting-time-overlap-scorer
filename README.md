@@ -34,3 +34,10 @@ The reference year is a constructor argument, not the current year. Pass an expl
 - `scoreOverlapForWeek(meeting, other, isoYear, isoWeek): number` — overlap minutes for a single ISO week.
 - `meetingToUtcInstant(meeting, isoYear, isoWeek): number` — UTC ms for the meeting's start in a given ISO week.
 - `getIsoWeeksInYear(isoYear): number[]` — list of ISO week numbers (1..52 or 53).
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
